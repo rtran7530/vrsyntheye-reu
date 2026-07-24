@@ -1,4 +1,4 @@
-# OCULAR VERIFICATION FOR VIRTUAL REALITY
+# Ocular Verification for Virtual Reality
 
 Virtual reality (VR) headsets (e.g., Meta Quest, Apple Vi-
 sion Pro) provide a seamless user experience due to their fast, frictionless
@@ -16,6 +16,6 @@ gin adequacy) fail on VR-acquired data; whereas, image adjustments
 primarily benefit periocular recognition, and multimodal fusion lowers
 EER by ∼11% over unimodal iris recognition performance.
 
-
+## SETUP
 
  
