@@ -8,25 +8,31 @@ interaction with the physical world in a simulated environment. User authenticat
 ## Specularity Removal (UnReflect)
 we used UnReflectAnything framework, an RGB-only single-image highlight removal pipeline.
 ### Installation
+
 ```bash
 pip install unreflectanything==1.1.1
 ura download --weights
-​```
-### Run:
-​```
-python UnReflect/unreflect.py --in <input_frames_path> -out <output_frames_path>
-​```
+```
 
----
+### Run:
+
+​```bash
+python UnReflect/unreflect.py --in <input_frames_path> --out <output_frames_path>
+```
+
 
 ## Non-Uniform Illumination Restoration (UNIR-Net)
 We used UNIR-Net framework, an illumination restoration network combining illumination enhancement, attention mechanisms, visual refinement, and contrast correction to improve image quality and visibility.
+
 ### Installation
+
  ```bash
 git clone https://github.com/xingyumex/UNIR-Net.git
 cp unirnet.py UNIR-Net/  # pretrained weights are included in the cloned repo
 ```
-### Run:
+
+### Run
+
 ```bash
 cd UNIR-Net
 python inference_unirnet.py --input <input_frames_path> --output <output_frames_path> 
