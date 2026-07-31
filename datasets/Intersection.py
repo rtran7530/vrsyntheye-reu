@@ -3,11 +3,17 @@ import os
 import shutil
 
 
+# 1. FILTERED DATA: Directory containing the images that passed your quality check.
+# The script uses the file names inside this directory as the "master list".
 VALID_OAC_DIR = os.path.abspath("Valid_Iris_Data") 
+
+# 2. RAW DATA: Directory containing images using other corrections or no corrections
 RAW_DATA_DIR = os.path.abspath("processed_data") 
 
+# 3. OUTPUT: Directory where the corresponding raw images will be saved.
+# This ensures an exact 1:1 paired dataset for fair baseline matching evaluation.
 OUTPUT_DIR = os.path.abspath("Valid_Iris_Data_nooac")
-
+        
 print(f"Scanning '{VALID_OAC_DIR}' for valid file names...")
 
 copy_count = 0

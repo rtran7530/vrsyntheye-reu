@@ -7,10 +7,16 @@ matplotlib.use('Agg')
 from pyeer.eer_info import get_eer_stats
 from pyeer.plot import plot_eer_stats
 
+
+# 1. INPUT: The master CSV file containing the paired matcher scores.
 CSV_PATH = "master_fused_scores.csv"
 
+# 2. OUTPUT - WEIGHT COMPARISONS: Folder to save ROC/DET plots for different fusion ratios.
 DIR_WEIGHTS = "./Plots_Fusion/"
+
+# 3. OUTPUT - EYE SIDEDNESS: Folder to save the Left vs. Right eye performance plots.
 DIR_LR = "./Plots_L_R_Fusion/"
+# ==============================================================================
 
 print(f"Loading Master Dataset: {CSV_PATH}")
 df = pd.read_csv(CSV_PATH)

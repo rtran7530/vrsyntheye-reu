@@ -4,12 +4,19 @@ import os
 import torch
 import numpy as np
 
+# USER CONFIGURATION - SET YOUR DIRECTORIES AND SAMPLING RATES HERE
 BASE_DIR = os.path.abspath(".")
+
+# 1. INPUT TEMPLATES: Folder containing the extracted .npz feature vectors.
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates_Unreflect")
 
+# 2. MATCHING THRESHOLDS: Define the maximum number of scores to save per eye.
+# This ensures balanced pools and prevents memory overflow during evaluation.
 TARGET_GEN_PER_EYE = 15000
 TARGET_IMP_PER_EYE = 1500000
 
+# 3. IMPOSTER SAMPLING RATE: Probability of keeping a calculated imposter score.
+# For massive VR biometric datasets, keeping all imposters can cause RAM crashes.
 SAMPLE_RATE = 0.002 
 
 left_vectors, left_names, left_subjs = [], [], []

@@ -9,6 +9,17 @@ from pyeer.eer_info import get_eer_stats
 from pyeer.plot import plot_eer_stats
 import pyeer.plot
 
+# USER CONFIGURATION - SET YOUR INPUT FILES AND OUTPUT DIRECTORY HERE
+# 1. INPUT SCORES: Text files containing the raw matching scores for Left and Right eyes.
+GEN_L_FILE = "gen_L_Unirnet_balanced.txt"
+IMP_L_FILE = "imp_L_Unirnet_balanced.txt"
+GEN_R_FILE = "gen_R_Unirnet_balanced.txt"
+IMP_R_FILE = "imp_R_Unirnet_balanced.txt"
+
+# 2. OUTPUT: Folder to save the generated PyEER plots (ROC, DET, FMR/FNMR).
+OUTPUT_DIR = "./Plots_PyEER_Output/"
+
+
 plt.rcParams.update({
     'font.size': 14,          
     'axes.labelsize': 16,     
@@ -68,13 +79,15 @@ def _custom_roc_curve(stats, ids, line_width=3, lgf_size=15, save_plots=True, dp
 
 pyeer.plot.plt_error_curves = _custom_error_curves
 pyeer.plot.plt_roc_curve = _custom_roc_curve
-print("Loading Left Eye Balanced Scores (14k / 1.4M)...")
-gen_L = np.loadtxt("gen_L_Unirnet_balanced.txt")
-imp_L = np.loadtxt("imp_L_Unirnet_balanced.txt")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-print("Loading Right Eye Balanced Scores (14k / 1.4M)...")
-gen_R = np.loadtxt("gen_R_Unirnet_balanced.txt")
-imp_R = np.loadtxt("imp_R_Unirnet_balanced.txt")
+print("Loading Left Eye Balanced Scores...")
+gen_L = np.loadtxt(GEN_L_FILE)
+imp_L = np.loadtxt(IMP_L_FILE)
+
+print("Loading Right Eye Balanced Scores...")
+gen_R = np.loadtxt(GEN_R_FILE)
+imp_R = np.loadtxt(IMP_R_FILE)
 
 print("Fusing Left and Right for the Global Combined Baseline...")
 gen_combined = np.concatenate((gen_L, gen_R))
@@ -91,7 +104,7 @@ plot_eer_stats(
     ["Combined (Both Eyes)", "Left Eye Only", "Right Eye Only"],
     lgf_size=16, 
     save_plots=True,
-    save_path="./",
+    save_path=OUTPUT_DIR,
     ext=".png"
 )
 

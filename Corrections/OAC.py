@@ -6,10 +6,20 @@ import numpy as np
 import torch
 from PIL import Image
 
+
+# USER CONFIGURATION - SET YOUR DIRECTORIES HERE
 BASE_DIR = os.path.abspath(".")
+
+# 1. INPUT: Folder containing your raw/processed eye images (.png format)
+# The script will scan all subfolders inside this directory automatically.
 INPUT_DIR = os.path.join(BASE_DIR, "processed_data")
+
+# 2. OUTPUT: Folder where the geometrically corrected images will be saved.
+# The original subfolder structure will be perfectly recreated here.
 OUTPUT_DIR = os.path.join(BASE_DIR, "OAC_data")
 
+# 3. DEPENDENCY: Path to the CVRL 'iris-fm-tools' Python directory. 
+# You must clone https://github.com/CVRL/OpenSourceIrisRecognition in your base directory.
 CVRL_PYTHON_DIR = os.path.join(BASE_DIR, "OpenSourceIrisRecognition", "methods", "iris-fm-tools", "Python")
 CVRL_SCRIPTS_DIR = os.path.join(CVRL_PYTHON_DIR, "scripts")
 

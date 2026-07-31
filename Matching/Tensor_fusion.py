@@ -4,9 +4,16 @@ import torch
 import numpy as np
 import pandas as pd
 
+# USER CONFIGURATION - SET YOUR DIRECTORIES HERE
 BASE_DIR = os.path.abspath(".")
+
+# 1. INPUT TEMPLATES: Folder containing the extracted .npz feature vectors.
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates_fusion")
+
+# 2. INPUT CSV: The CSV file containing the baseline pairs and scores (e.g., periocular).
 CSV_PATH = "pairs_with_similarity_scores_normalized.csv"
+
+# 3. OUTPUT CSV: The new master CSV file that will contain both modality scores.
 OUTPUT_CSV_PATH = "master_fused_scores.csv"
 
 print(f"Loading Peer's CSV into RAM from: {CSV_PATH}")

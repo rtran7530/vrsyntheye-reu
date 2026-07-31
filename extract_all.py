@@ -2,8 +2,17 @@
 import os
 import cv2
 
-INPUT_DIR = "data"
-OUTPUT_DIR = "processed_data"
+# USER CONFIGURATION - SET YOUR DIRECTORIES AND PARAMETERS HERE
+# 1. INPUT: Directory containing the raw .avi video files, organized by subject.
+INPUT_DIR = os.path.abspath("data")
+
+# 2. OUTPUT: Directory where the extracted grayscale .png frames will be saved.
+# The original subject and video folder hierarchy will be preserved.
+OUTPUT_DIR = os.path.abspath("processed_data")
+
+# 3. FRAME SKIPPING: Number of initial frames to discard per video.
+# Useful for bypassing headset initialization or sensor stabilization periods.
+SKIP_FRAMES = 75
 
 print("Starting Frame Extraction (Cloning Original Directory Structure)...")
 
@@ -33,7 +42,7 @@ for root, dirs, files in os.walk(INPUT_DIR):
                 
             frame_count += 1
 
-            if frame_count <= 75:
+            if frame_count <= SKIP_FRAMES:
                 continue
 
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)

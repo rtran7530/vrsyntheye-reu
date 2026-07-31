@@ -6,11 +6,22 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
+# USER CONFIGURATION - SET YOUR DIRECTORIES HERE
 BASE_DIR = os.path.abspath(".")
-RAW_DATA_DIR = os.path.join(BASE_DIR, "processed_data") 
-TEMPLATES_DIR = os.path.join(BASE_DIR, "templates_fusion")
+
+# 1. INPUT CSV: A CSV file containing the specific probe and reference pairs you need.
+# The script will parse this file and extract a unique list of images to process.
 CSV_PATH = "pairs_with_similarity_scores_normalized.csv"
 
+# 2. INPUT DATA: Folder containing your raw or processed images referenced in the CSV.
+RAW_DATA_DIR = os.path.join(BASE_DIR, "processed_data") 
+
+# 3. OUTPUT: Folder where the targeted feature templates (.npz) will be saved.
+# The original nested directory structure will be preserved.
+TEMPLATES_DIR = os.path.join(BASE_DIR, "templates_fusion")
+
+# 4. DEPENDENCY: Path to the CVRL 'ArcIris' Python directory.
+# You must clone https://github.com/CVRL/OpenSourceIrisRecognition in your base directory.
 ARCIRIS_DIR = os.path.join(BASE_DIR, "OpenSourceIrisRecognition", "methods", "ArcIris", "Python")
 sys.path.append(ARCIRIS_DIR)
 

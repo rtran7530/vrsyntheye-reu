@@ -7,19 +7,31 @@ import torch
 import csv 
 from PIL import Image
 
+# USER CONFIGURATION - SET YOUR DIRECTORIES HERE
 BASE_DIR = os.path.abspath(".")
+
+# 1. INPUT: Folder containing your unconstrained images (e.g., OAC output)
+# The script will recursively scan all subfolders automatically.
 INPUT_DIR = os.path.join(BASE_DIR, "OAC_data") 
+
+# 2. OUTPUT - VALID: Folder for images that pass the geometric quality check.
 VALID_IRIS_DIR = os.path.join(BASE_DIR, "Valid_Iris_Data")
+
+# 3. OUTPUT - REJECTED: Folder for images that fail (periocular/degraded data).
 PERIOCULAR_DIR = os.path.join(BASE_DIR, "Periocular_Data")
 
+# 4. OUTPUT - TRACKING: CSV file to cache the successful boundary coordinates.
 CSV_PATH = os.path.join(BASE_DIR, "cvrl_gold_standard_coordinates.csv")
 
+# 5. DEPENDENCY: Path to the CVRL 'ArcIris' Python directory.
+# You must clone https://github.com/CVRL/OpenSourceIrisRecognition in your base directory.
+ARCIRIS_DIR = os.path.join(BASE_DIR, "OpenSourceIrisRecognition", "methods", "ArcIris", "Python")
+
+# Initialize the coordinate tracker CSV if it doesn't already exist
 if not os.path.exists(CSV_PATH):
     with open(CSV_PATH, mode='w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(["Filename", "px", "py", "pr", "ix", "iy", "ir"])
-
-ARCIRIS_DIR = os.path.join(BASE_DIR, "OpenSourceIrisRecognition", "methods", "ArcIris", "Python")
 sys.path.append(ARCIRIS_DIR)
 
 from modules.irisRecognition import irisRecognition

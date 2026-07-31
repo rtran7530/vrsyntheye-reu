@@ -5,10 +5,19 @@ import torch
 import numpy as np
 from PIL import Image
 
+# USER CONFIGURATION - SET YOUR DIRECTORIES HERE
 BASE_DIR = os.path.abspath(".")
+
+# 1. INPUT: Folder containing your quality-filtered, valid iris images (.png)
+# The script will recursively scan all subfolders automatically.
 VALID_IRIS_DIR = os.path.join(BASE_DIR, "Valid_Iris_Data")
+
+# 2. OUTPUT: Folder where the extracted feature templates (.npz) will be saved.
+# The original nested directory structure will be perfectly preserved.
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 
+# 3. DEPENDENCY: Path to the CVRL 'ArcIris' Python directory.
+# You must clone https://github.com/CVRL/OpenSourceIrisRecognition in your base directory.
 ARCIRIS_DIR = os.path.join(BASE_DIR, "OpenSourceIrisRecognition", "methods", "ArcIris", "Python")
 sys.path.append(ARCIRIS_DIR)
 
