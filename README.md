@@ -41,3 +41,6 @@ cp unirnet.py UNIR-Net/   # pretrained weights are included in the cloned repo
 cd UNIR-Net
 python inference_unirnet.py --input <input_frames_path> --output <output_frames_path>
 ```
+
+## Acknowledgment
+This material is based upon work supported by the National Science Foundation under Grant No. 2349771 through the HUMANS MOVE REU Site at the University of Wyoming.
