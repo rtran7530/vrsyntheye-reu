@@ -12,7 +12,7 @@ We observe that some metrics (e.g., margin adequacy) fail on VR-acquired data; w
 <p align="center">
   <img src="assets/corrections.png" width="800" alt="Examples of ocular image adjustment operations">
   <br>
-  <em><strong>Fig. 1.</strong> Examples of ocular image adjustment operations. <span style="color:red;">&#9633;</span>: original frame; <span style="color:blue;">&#9633;</span>: output after off-axis correction via DINOv3+H8Net; <span style="color:green;">&#9633;</span>: output after specular reflection removal via UnReflect; <span style="color:goldenrod;">&#9633;</span>: output after uneven illumination correction via UNIR-Net. Zoomed-in views of the iris regions indicate effects after processing operations.</em>
+  <em><strong>Fig. 1.</strong> Examples of ocular image adjustment operations. 🟥: original frame; 🟦: output after off-axis correction via DINOv3+H8Net; 🟩: output after specular reflection removal via UnReflect; 🟨: output after uneven illumination correction via UNIR-Net. Zoomed-in views of the iris regions indicate effects after processing operations.</em>
 </p>
 
 ## Video Frame Extraction
@@ -152,7 +152,7 @@ python evaluation/pyeer_plot_new.py
 python evaluation/pyeer_plot_fusion.py
 ```
 <p align="center">
-  <img src="assets/verification_all.png" width="800" alt="ROC curves comparing various fusion variations">
+  <img src="assets/verification_all.png" width="450" alt="ROC curves comparing various fusion variations">
   <br>
   <em>Fig. 2. ROC curves comparing various fusion variations </em>
 </p>
