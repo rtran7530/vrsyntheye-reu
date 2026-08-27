@@ -58,7 +58,6 @@ cp preprocessing/unirnet.py UNIR-Net/   # pretrained weights are included in the
 ```bash
 cd UNIR-Net
 python inference_unirnet.py --input <input_frames_path> --output <output_frames_path>
-cd 
 ```
 
 ## Off-Axis Correction (OAC)
@@ -165,3 +164,4 @@ https://arxiv.org/abs/2607.20790
 ## Acknowledgments
 
 This material is based upon work supported by the National Science Foundation under Grant No. 2349771 through the HUMANS MOVE REU Site at the University of Wyoming.
+We also acknowledge the Computer Vision Research Lab (CVRL) for their [OpenSourceIrisRecognition](https://github.com/CVRL/OpenSourceIrisRecognition) repository, from which the ArcIris and Off-Axis Correction (OAC) models were utilized. This framework serves as their official open-source submission to the NIST IREX X evaluation program.
