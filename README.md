@@ -33,8 +33,11 @@ python extract_all.py
 
 We used the UnReflectAnything framework, an RGB-only single-image highlight removal pipeline.
 
+Paper: [UnReflectAnything](https://arxiv.org/abs/2512.09583)
+
 ### Installation
 ```bash
+git clone https://github.com/alberto-rota/UnReflectAnything.git
 pip install unreflectanything==1.1.1
 ura download --weights
 ```
@@ -48,9 +51,11 @@ python preprocessing/unreflect.py --in <input_frames_path> --out <output_frames_
 
 We used the UNIR-Net framework, an illumination restoration network that combines illumination enhancement, attention mechanisms, visual refinement, and contrast correction to improve image quality and visibility.
 
+Paper: [UNIR-Net](https://arxiv.org/abs/2501.09053)
+
 ### Installation
 ```bash
-git clone [https://github.com/xingyumex/UNIR-Net.git](https://github.com/xingyumex/UNIR-Net.git)
+git clone https://github.com/xingyumex/UNIR-Net.git
 cp preprocessing/unirnet.py UNIR-Net/   # pretrained weights are included in the cloned repo
 ```
 
@@ -67,7 +72,7 @@ We used a foundation vision transformer (DINOv3) and a regression head (H8Net) t
 ### Installation
 ```bash
 pip install torch torchvision torchaudio pillow
-git clone [https://github.com/CVRL/OpenSourceIrisRecognition.git](https://github.com/CVRL/OpenSourceIrisRecognition.git)
+git clone https://github.com/CVRL/OpenSourceIrisRecognition.git
 ```
 
 ### Run
@@ -165,3 +170,4 @@ https://arxiv.org/abs/2607.20790
 
 This material is based upon work supported by the National Science Foundation under Grant No. 2349771 through the HUMANS MOVE REU Site at the University of Wyoming.
 We also acknowledge the Computer Vision Research Lab (CVRL) for their [OpenSourceIrisRecognition](https://github.com/CVRL/OpenSourceIrisRecognition) repository, from which the ArcIris and Off-Axis Correction (OAC) models were utilized. This framework serves as their official open-source submission to the NIST IREX X evaluation program.
+This work utilizes the official implementation of UnReflect and UNIR-Net, and we thank the authors for their open-source code.
