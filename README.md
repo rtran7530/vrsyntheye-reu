@@ -163,8 +163,18 @@ python evaluation/pyeer_plot_fusion.py
 
 ## Citation
 
-If you use this code or dataset in your research, please cite our paper:
-https://arxiv.org/abs/2607.20790
+If you find this work to be useful, please cite
+```
+@article{singh2026ocularverification,
+      title={Ocular Verification for Virtual Reality}, 
+      author={Husanpreet singh, Robert Tran, Ayushree Kharel, Sudipta Banerjee},
+      year={2026},
+      journal={11th International Conference on Computer Vision & Image Processing (CVIP)},
+      note={Accepted}
+}
+
+```
+Refer to the link for the arXiv version: https://arxiv.org/abs/2607.20790
 
 ## Acknowledgments
 
