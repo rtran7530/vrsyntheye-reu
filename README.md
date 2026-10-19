@@ -180,4 +180,8 @@ Refer to the link for the arXiv version: https://arxiv.org/abs/2607.20790
 
 This material is based upon work supported by the National Science Foundation under Grant No. 2349771 through the HUMANS MOVE REU Site at the University of Wyoming.
 We also acknowledge the Computer Vision Research Lab (CVRL) for their [OpenSourceIrisRecognition](https://github.com/CVRL/OpenSourceIrisRecognition) repository, from which the ArcIris and Off-Axis Correction (OAC) models were utilized. This framework serves as their official open-source submission to the NIST IREX X evaluation program.
-This work utilizes the official implementation of UnReflect and UNIR-Net, and we thank the authors for their open-source code.
+This work utilizes the official implementation of UnReflect and UNIR-Net, and we thank the authors for their open-source code. 
+
+## Contact US
+
+If you have any questions about the paper or the code, please contact hsingh1@uwyo.edu or akharel@uwyo.edu
